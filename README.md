@@ -2,7 +2,7 @@
 
 ## Objectives
 
-1. Get familiar iterating through arrays with enumerator methods like `.collect` or `.map`, `.find`, and `.include`. 
+1. Get familiar iterating through arrays with enumerator methods like `.collect` or `.map`, `.find`, and `.include`.
 2. Build methods and control their return values.
 3. Practice control flow with `if` and `else` statements.
 
@@ -32,7 +32,7 @@ It should then print out each name using `puts`. The print-out should look like 
 > 3. Bashful
 > 4. Grumpy
 
-Look into the [`each_with_index`](http://ruby-doc.org/core/Enumerable.html#method-i-each_with_index) method. 
+Look into the [`each_with_index`](http://ruby-doc.org/core/Enumerable.html#method-i-each_with_index) method.
 
 Once the test for this method is passing, move on to the next method.
 
@@ -113,3 +113,30 @@ You can assume that all strings will be lowercase. Take a look at the [`.include
 * The [`.include` method](http://ruby-doc.org/core/Array.html#method-i-include-3F)
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/cartoon-collections' title='Cartoon Collections'>Cartoon Collections</a> on Learn.co and start learning to code for free.</p>
+
+def roll_call_dwarves(dwarves)
+  dwarves.each_with_index { |name, index|
+    puts "#{index + 1}. #{name}"
+  }
+end
+
+def summon_captain_planet(planeteer_calls)
+  planeteer_calls.collect { |calls|
+    calls.capitalize + "!"
+  }
+end
+
+def long_planeteer_calls(calls)
+  calls.any?{|i| i.length > 4}
+end
+
+def find_the_cheese(snacks)
+  cheese_types = ["cheddar", "gouda", "camembert"]
+  its_cheese = nil
+  snacks.each do |is_this_cheese|
+    if cheese_types.include?(is_this_cheese)
+      its_cheese = is_this_cheese
+    end
+  end
+  its_cheese
+end
