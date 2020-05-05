@@ -6,8 +6,8 @@ def summon_captain_planet(planeteers)
   planeteers.collect{|each_planeteer| each_planeteer.capitalize + "!" }
 end
 
-def long_planeteer_calls
-
+def long_planeteer_calls(words)
+  words.any?{|word| word.length > 4}
 end
 
 def find_the_cheese
